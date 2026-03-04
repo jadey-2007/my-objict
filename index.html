@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>崔钰杰的呆萌小窝</title>
+    <!-- 引入字体图标库 (请确保路径正确) -->
+    <link rel="stylesheet" href="./font_bv7nueglp6d/iconfont.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 1. 页面基础样式 */
+        body {
+            font-family: 'Segoe UI', 'Microsoft Yahei', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* 2. 卡片容器优化 */
+        .box-card {
+            width: 350px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .box-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 3. 头部样式增强 */
+        .head {
+            background: linear-gradient(45deg, #3498dc, #8e44ad);
+            padding: 30px 20px 40px;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .icon-yonghu {
+            font-size: 80px;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .head h2 {
+            margin: 10px 0 5px;
+            font-size: 24px;
+        }
+
+        .head p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        /* 4. 内容区域优化 */
+        .content {
+            padding: 20px;
+            max-height: 250px;
+            overflow-y: auto;
+            color: #555;
+            line-height: 1.8;
+            text-indent: 2em;
+            font-size: 14px;
+        }
+
+        /* 5. 页脚与状态栏 */
+        .footer {
+            padding: 20px;
+            border-top: 2px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fdfdfd;
+        }
+
+        .footer-left {
+            display: flex;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .footer-left .icon-shoucang {
+            font-size: 18px;
+            color: #bbb;
+            transition: color 0.2s;
+        }
+
+        .footer-left .icon-shoucang.active {
+            color: #f39c12;
+            transform: scale(1.2);
+        }
+
+        .footer-right {
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* 6. 新增：技能进度条样式 */
+        .skills {
+            padding: 15px 20px;
+            background: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+
+        .skill-item {
+            margin-bottom: 10px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #ddd;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(90deg, #3498dc, #8e44ad);
+            transition: width 0.8s ease;
+        }
+
+        /* 7. 状态标签 */
+        .status {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .status.online {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .status.busy {
+            background: #e74c3c;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-card">
+        <!-- 头部 -->
+        <div class="head">
+            <span class="iconfont icon-yonghu"></span>
+            <h2>崔钰杰</h2>
+            <p>计科类2510班 <span class="status online">在线</span></p >
+        </div>
+
+        <!-- 内容 -->
+        <div class="content">
+            崔钰杰同学是一位品学兼优、全面发展的优秀青年。在学习上，他勤奋刻苦，思维敏捷，不仅专业知识扎实，更具备极强的钻研精神，面对难题总能迎难而上，成绩始终名列前茅。在生活中，他待人真诚，乐于助人，总是第一时间向遇到困难的同学伸出援手，用温暖感染着身边的每一个人。作为集体的一员，他拥有强烈的责任感和卓越的领导力，在各类活动中勇挑重担，协调各方，展现出非凡的团队凝聚力。他谦逊低调的作风与积极进取的态度，赢得了师生的一致赞誉。相信凭借这份坚持与才华，崔钰杰定能在未来的道路上披荆斩棘，成就更加辉煌的篇章，成为社会的栋梁之才。
+        </div>
+
+        <!-- 技能展示区 -->
+        <div class="skills">
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>前端开发</span>
+                    <span>90%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%;" data-width="90%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>算法逻辑</span>
+                    <span>85%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%;" data-width="85%"></span>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>团队协作</span>
+                    <span>95%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%;" data-width="95%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <div class="footer-left" id="favorite">
+                <!-- 重复6次 -->
+                <span class="iconfont icon-shoucang"></span>
+                <span class="iconfont icon-shoucang"></span>
+                <span class="iconfont icon-shoucang"></span>
+                <span class="iconfont icon-shoucang"></span>
+                <span class="iconfont icon-shoucang"></span>
+                <span class="iconfont icon-shoucang"></span>
+            </div>
+            <div class="footer-right">
+                更新于: 2026年03月04日
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. 修复拼写错误 (原HTML中的 "cotent" -> "content")
+        // 2. 点赞/收藏交互功能
+        const favorite = document.getElementById('favorite');
+        let isFavorited = false;
+
+        favorite.addEventListener('click', function () {
+            // 切换所有图标的颜色
+            this.querySelectorAll('.icon-shoucang').forEach(icon => {
+                icon.classList.toggle('active', !isFavorited);
+            });
+
+            // 改变状态文本 (如果有的话)
+            isFavorited = !isFavorited;
+            alert(isFavorited ? '已加入精选！谢谢！' : '取消收藏了哦~');
+        });
+
+        // 3. 技能条动画
+        // 当页面滚动到技能区域时，进度条开始填充
+        const progressBars = document.querySelectorAll('.progress');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.width = entry.target.getAttribute('data-width');
+                    observer.unobserve(entry.target); // 动画只执行一次
+                }
+            });
+        }, { threshold: 0.5 }); // 当进度条出现50%时触发
+
+        progressBars.forEach(bar => {
+            observer.observe(bar);
+        });
+
+        // 4. 状态模拟 (每3秒随机切换一次状态)
+        const status = document.querySelector('.status');
+        setInterval(() => {
+            const random = Math.random();
+            if (random > 0.5) {
+                status.textContent = '摸鱼中';
+                status.className = 'status online';
+            } else {
+                status.textContent = '卷代码';
+                status.className = 'status busy';
+            }
+        }, 3000);
+    </script>
+</body>
+
+</html>
